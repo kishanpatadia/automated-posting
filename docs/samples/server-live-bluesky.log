@@ -1,0 +1,13 @@
+INFO:     Started server process [232]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+2026-11-16 09:46:45,305 INFO httpx: HTTP Request: POST https://bsky.social/xrpc/com.atproto.server.createSession "HTTP/1.1 200 OK"
+2026-11-16 09:46:45,448 INFO httpx: HTTP Request: POST https://bsky.social/xrpc/com.atproto.repo.createRecord "HTTP/1.1 200 OK"
+2026-11-16 09:46:45,970 INFO httpx: HTTP Request: GET https://bsky.app/profile/kishan-test.bsky.social/post/3n2ganykr7r26 "HTTP/1.1 200 OK"
+2026-11-16 09:46:45,971 INFO app.services.posting_service: Posted to Bluesky: https://bsky.app/profile/kishan-test.bsky.social/post/3n2ganykr7r26 (public=True)
+INFO:     127.0.0.1:49750 - "POST /posting HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [232]

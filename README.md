@@ -178,6 +178,9 @@ unconfigured platforms, the public-access check, platform selection, and the req
 
 - `docs/screenshot-swagger.png`: API docs at `/docs`
 - `docs/screenshot-try-it-out.png`: `POST /posting` from Swagger "Try it out"
+- `docs/samples/run-live-bluesky.txt`: live run with Bluesky configured, `success: true`
+  ([the published post](https://bsky.app/profile/kishan-test.bsky.social/post/3n2ganykr7r26))
+- `docs/samples/server-live-bluesky.log`: server log for that run (login, post, public-access check)
 - `docs/samples/run-unconfigured.txt`: a real run before credentials were added
 - `docs/samples/validation-errors.txt`: real 422 responses
 - `docs/samples/server.log`: server log for those requests
