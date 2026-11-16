@@ -1,0 +1,60 @@
+$ ./scripts/sample_request.sh    # no credentials in .env yet
+{
+    "success": false,
+    "results": [
+        {
+            "platform": "Bluesky",
+            "status": "failed",
+            "posted_url": null,
+            "public_access": false,
+            "date": null,
+            "time": null,
+            "error": "Not configured: set BLUESKY_HANDLE, BLUESKY_APP_PASSWORD"
+        },
+        {
+            "platform": "Mastodon",
+            "status": "failed",
+            "posted_url": null,
+            "public_access": false,
+            "date": null,
+            "time": null,
+            "error": "Not configured: set MASTODON_ACCESS_TOKEN"
+        },
+        {
+            "platform": "Telegram",
+            "status": "failed",
+            "posted_url": null,
+            "public_access": false,
+            "date": null,
+            "time": null,
+            "error": "Not configured: set TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL"
+        },
+        {
+            "platform": "Discord",
+            "status": "failed",
+            "posted_url": null,
+            "public_access": false,
+            "date": null,
+            "time": null,
+            "error": "Not configured: set DISCORD_WEBHOOK_URL"
+        },
+        {
+            "platform": "DEV Community",
+            "status": "failed",
+            "posted_url": null,
+            "public_access": false,
+            "date": null,
+            "time": null,
+            "error": "Not configured: set DEVTO_API_KEY"
+        },
+        {
+            "platform": "GitHub Gist",
+            "status": "failed",
+            "posted_url": null,
+            "public_access": false,
+            "date": null,
+            "time": null,
+            "error": "Not configured: set GIST_TOKEN"
+        }
+    ]
+}

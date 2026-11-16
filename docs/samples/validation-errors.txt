@@ -1,0 +1,16 @@
+$ curl -X POST http://localhost:4000/posting -d '{"message": "Two links https://example.com and https://example.org"}'
+{"success":false,"errors":[{"field":"message","error":"Message must include exactly one CTA link (found 2)."}]}
+HTTP 422
+
+$ curl -X POST http://localhost:4000/posting -d '{"message": "No link here"}'
+{"success":false,"errors":[{"field":"message","error":"Message must include exactly one CTA link (http:// or https://)."}]}
+HTTP 422
+
+$ curl -X POST http://localhost:4000/posting -d '{"message": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa https://example.com"}'
+{"success":false,"errors":[{"field":"message","error":"Message must not exceed 200 characters (got 210)."}]}
+HTTP 422
+
+$ curl -X POST http://localhost:4000/posting -d '{"message": "Visit www.example.com"}'
+{"success":false,"errors":[{"field":"message","error":"The link 'www.example.com' must start with http:// or https://."}]}
+HTTP 422
+
