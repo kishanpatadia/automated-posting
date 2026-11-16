@@ -75,7 +75,7 @@ git clone <this-repo-url> automated-posting
 cd automated-posting
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 cp .env.example .env               # then fill in the credentials below
 uvicorn app.main:app --host 0.0.0.0 --port 4000
 ```
@@ -102,8 +102,6 @@ curl -X POST http://localhost:4000/posting \
   -H "Content-Type: application/json" \
   -d '{"message": "Check out our latest business platform and grow your online visibility. https://example.com"}'
 ```
-
-(or `./scripts/sample_request.sh`)
 
 ### Response: 200
 
@@ -171,19 +169,15 @@ pytest -v
 
 The tests cover validation rules, posting to all platforms, partial failures, timeouts and network errors,
 unconfigured platforms, the public-access check, platform selection, and the request format for each API
-(for example, the Bluesky link facet's UTF-8 byte offsets). They run in CI on Python 3.11–3.13
-(`.github/workflows/tests.yml`).
+(for example, the Bluesky link facet's UTF-8 byte offsets). All HTTP calls are mocked, so no real posts are made.
 
 ## Screenshots and logs
 
 - `docs/screenshot-swagger.png`: API docs at `/docs`
-- `docs/screenshot-try-it-out.png`: `POST /posting` from Swagger "Try it out"
 - `docs/samples/run-live-bluesky.txt`: live run with Bluesky configured, `success: true`
   ([the published post](https://bsky.app/profile/kishan-test.bsky.social/post/3n2ganykr7r26))
 - `docs/samples/server-live-bluesky.log`: server log for that run (login, post, public-access check)
-- `docs/samples/run-unconfigured.txt`: a real run before credentials were added
 - `docs/samples/validation-errors.txt`: real 422 responses
-- `docs/samples/server.log`: server log for those requests
 - `docs/samples/test-run.txt`: test output
 
 ![Swagger UI](docs/screenshot-swagger.png)
